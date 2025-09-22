@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulSync - Connect Through Shared Feelings</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+            
+              <h2 id="nav-title">SoulSync</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-links" id="nav-links">
+                    <a href="#" class="nav-link" data-page="landing">Home</a>
+                    <a href="#" class="nav-link" data-page="dashboard" id="dashboard-link" style="display: none;">Dashboard</a>
+                    <a href="#" class="nav-link" data-page="community" id="community-link" style="display: none;">Community</a>
+                    <a href="#" class="nav-link" data-page="resources" id="resources-link" style="display: none;">Resources</a>
+                    <a href="#" class="nav-link" id="logout-link" style="display: none;">Logout</a>
+                    <a href="#" class="nav-link" data-page="login" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-title-container">
+                        <h1 class="hero-title">Connect Through Shared Feelings</h1>
+                    </div>
+                    <p class="hero-subtitle">Track your moods, connect with supportive peers, and embark on a journey toward better mental wellness in a safe, anonymous community.</p>
+                    <button class="btn btn--primary btn--lg cta-register">
+                        <i class="fas fa-heart"></i> Start Your Wellness Journey
+                    </button>
+                </div>
+                <div class="hero-image">
+ 
+             <img src="c:\Users\DELL\Desktop\image.png" alt="Mental Wellness Illustration">
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Core Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3>Mood Tracking & Journaling</h3>
+                        <p>Track your daily emotions with emojis, text, and voice notes. Tag triggers and analyze patterns.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Visualize your emotional journey with charts, heatmaps, and insights into your mood patterns.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Anonymous Community</h3>
+                        <p>Share thoughts, support peers, and connect with others in a safe, stigma-free environment.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Safe Chat System</h3>
+                        <p>Start anonymous chats and reveal identity when you're ready. Full WhatsApp-style messaging.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Gamification & Rewards</h3>
+                        <p>Earn points, maintain streaks, and unlock achievements for positive mental health habits.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Personalized Tips</h3>
+                        <p>Receive AI-driven wellness recommendations based on your mood patterns and preferences.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Peer Matching</h3>
+                        <p>Connect with users facing similar challenges through our intelligent matching system.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3>Support Resources</h3>
+                        <p>Access Indian mental health resources, helplines, and professional support when needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Mental Wellness?</h2>
+                    <p>Join thousands of users already on their journey to better mental health.</p>
+                    <button class="btn btn--primary btn--lg cta-register">Get Started Today</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page auth-page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Welcome Back to SoulSync</h2>
+                    <p>Continue your wellness journey</p>
+                </div>
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Sign In</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" data-page="register">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Page -->
+    <div id="register-page" class="page auth-page">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Join SoulSync</h2>
+                    <p>Start your mental wellness journey today</p>
+                </div>
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="register-confirm" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Create Account</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="#" data-page="login">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="page dashboard-container">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Welcome back, <span id="user-name">User</span>!</h1>
+                <p class="dashboard-subtitle">How are you feeling today?</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Quick Mood Log -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-smile"></i> Quick Mood Check</h3>
+                    <div class="mood-selector">
+                        <div class="mood-options">
+                            <div class="mood-option" data-mood="😊" data-label="Happy">😊</div>
+                            <div class="mood-option" data-mood="😐" data-label="Neutral">😐</div>
+                            <div class="mood-option" data-mood="😔" data-label="Sad">😔</div>
+                            <div class="mood-option" data-mood="😢" data-label="Very Sad">😢</div>
+                            <div class="mood-option" data-mood="😡" data-label="Angry">😡</div>
+                            <div class="mood-option" data-mood="😴" data-label="Tired">😴</div>
+                        </div>
+                        <div class="intensity-slider" id="intensity-container" style="display: none;">
+                            <label>Intensity (1-5):</label>
+                            <input type="range" id="mood-intensity" min="1" max="5" value="3">
+                            <span id="intensity-value">3</span>
+                        </div>
+                        <button id="log-mood-btn" class="btn btn--primary" style="display: none;">Log Mood</button>
+                    </div>
+                </div>
+
+                <!-- Current Streak -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-fire"></i> Current Streak</h3>
+                    <div class="streak-display">
+                        <div class="streak-number" id="streak-count">0</div>
+                        <div class="streak-label">Days</div>
+                    </div>
+                </div>
+
+                <!-- Analytics Preview -->
+                <div class="dashboard-card chart-preview">
+                    <h3><i class="fas fa-chart-line"></i> This Week's Mood</h3>
+                    <div class="chart-container" style="position: relative; height: 200px;">
+                        <canvas id="week-mood-chart"></canvas>
+                    </div>
+                    <button class="btn btn--outline" data-page="analytics">View Full Analytics</button>
+                </div>
+
+                <!-- Recent Community Activity -->
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-users"></i> Community Activity</h3>
+                    <div class="activity-list" id="recent-activity">
+                        <div class="activity-item">
+                            <div class="activity-content">
+                                <p>"Feeling much better after trying the breathing exercises!"</p>
+                                <span class="activity-meta">2 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn--outline" data-page="community">Join Community</button>
+                </div>
+            </div>
+
+            <!-- Navigation Cards -->
+            <div class="nav-cards">
+                <div class="nav-card" data-page="mood-tracking">
+                    <i class="fas fa-edit"></i>
+                    <h4>Journal Entry</h4>
+                    <p>Write about your day</p>
+                </div>
+                <div class="nav-card" data-page="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Analytics</h4>
+                    <p>View mood insights</p>
+                </div>
+                <div class="nav-card" data-page="community">
+                    <i class="fas fa-comments"></i>
+                    <h4>Community</h4>
+                    <p>Connect with others</p>
+                </div>
+                <div class="nav-card" data-page="chat">
+                    <i class="fas fa-message"></i>
+                    <h4>Messages</h4>
+                    <p>Chat with peers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mood Tracking Page -->
+    <div id="mood-tracking-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-edit"></i> Mood Journal</h1>
+                <p>Reflect on your day and track your emotional journey</p>
+            </div>
+            
+            <div class="mood-tracking-form">
+                <div class="mood-entry-card card">
+                    <div class="card__body">
+                        <h3>How are you feeling?</h3>
+                        <div class="mood-selector-detailed">
+                            <div class="mood-options-large">
+                                <div class="mood-option-large" data-mood="😊" data-label="Happy">
+                                    <div class="emoji">😊</div>
+                                    <div class="label">Happy</div>
+                                </div>
+                                <div class="mood-option-large" data-mood="😐" data-label="Neutral">
+                                    <div class="emoji">😐</div>
+                                    <div class="label">Neutral</div>
+                                </div>
+                                <div class="mood-option-large" data-mood="😔" data-label="Sad">
+                                    <div class="emoji">😔</div>
+                                    <div class="label">Sad</div>
+                                </div>
+                                <div class="mood-option-large" data-mood="😢" data-label="Very Sad">
+                                    <div class="emoji">😢</div>
+                                    <div class="label">Very Sad</div>
+                                </div>
+                                <div class="mood-option-large" data-mood="😡" data-label="Angry">
+                                    <div class="emoji">😡</div>
+                                    <div class="label">Angry</div>
+                                </div>
+                                <div class="mood-option-large" data-mood="😴" data-label="Tired">
+                                    <div class="emoji">😴</div>
+                                    <div class="label">Tired</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Intensity Level</label>
+                            <div class="intensity-slider-detailed">
+                                <input type="range" id="detailed-intensity" min="1" max="5" value="3">
+                                <div class="intensity-labels">
+                                    <span>Low</span>
+                                    <span>Moderate</span>
+                                    <span>High</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">What triggered this feeling?</label>
+                            <div class="trigger-tags">
+                                <div class="trigger-tag" data-trigger="work">Work</div>
+                                <div class="trigger-tag" data-trigger="relationships">Relationships</div>
+                                <div class="trigger-tag" data-trigger="health">Health</div>
+                                <div class="trigger-tag" data-trigger="family">Family</div>
+                                <div class="trigger-tag" data-trigger="friends">Friends</div>
+                                <div class="trigger-tag" data-trigger="studies">Studies</div>
+                                <div class="trigger-tag" data-trigger="finance">Finance</div>
+                                <div class="trigger-tag" data-trigger="sleep">Sleep</div>
+                                <div class="trigger-tag" data-trigger="exercise">Exercise</div>
+                                <div class="trigger-tag" data-trigger="social">Social</div>
+                                <div class="trigger-tag" data-trigger="weather">Weather</div>
+                                <div class="trigger-tag" data-trigger="news">News</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Journal Entry (Optional)</label>
+                            <textarea class="form-control" id="journal-text" placeholder="Write about your day, thoughts, or feelings..." rows="4"></textarea>
+                            <div class="char-counter">
+                                <span id="char-count">0</span>/500 characters
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn--secondary" id="clear-mood-entry">Clear</button>
+                            <button class="btn btn--primary" id="save-mood-entry">Save Entry</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mood History -->
+                <div class="mood-history-card card">
+                    <div class="card__body">
+                        <h3>Recent Entries</h3>
+                        <div class="mood-history" id="mood-history">
+                            <!-- Mood entries will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Page -->
+    <div id="analytics-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-chart-line"></i> Analytics Dashboard</h1>
+                <p>Insights into your emotional patterns and progress</p>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="analytics-card card">
+                    <div class="card__body">
+                        <h3>Mood Trends (Last 30 Days)</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="mood-trend-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-card card">
+                    <div class="card__body">
+                        <h3>Trigger Analysis</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="trigger-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-card card">
+                    <div class="card__body">
+                        <h3>Mood Distribution</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="mood-distribution-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-card card">
+                    <div class="card__body">
+                        <h3>Progress Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric">
+                                <div class="metric-value" id="total-entries">0</div>
+                                <div class="metric-label">Total Entries</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value" id="current-streak">0</div>
+                                <div class="metric-label">Current Streak</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value" id="avg-mood">0.0</div>
+                                <div class="metric-label">Avg Mood Score</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value" id="total-points">0</div>
+                                <div class="metric-label">Total Points</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Page -->
+    <div id="community-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-users"></i> Community</h1>
+                <p>Connect, share, and support each other in a safe space</p>
+            </div>
+
+            <div class="community-tabs">
+                <button class="tab-btn active" data-tab="feed">Community Feed</button>
+                <button class="tab-btn" data-tab="groups">Support Groups</button>
+                <button class="tab-btn" data-tab="match">Find Match</button>
+            </div>
+
+            <!-- Community Feed -->
+            <div id="community-feed" class="community-tab active">
+                <div class="create-post-card card">
+                    <div class="card__body">
+                        <h3>Share Your Thoughts</h3>
+                        <form id="create-post-form">
+                            <div class="form-group">
+                                <textarea class="form-control" id="post-content" placeholder="What's on your mind? Share your thoughts anonymously..." rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Emotion Tag</label>
+                                <select class="form-control" id="emotion-tag">
+                                    <option value="general">General</option>
+                                    <option value="happy">Happy</option>
+                                    <option value="sad">Sad</option>
+                                    <option value="anxious">Anxious</option>
+                                    <option value="stressed">Stressed</option>
+                                    <option value="calm">Calm</option>
+                                    <option value="frustrated">Frustrated</option>
+                                    <option value="hopeful">Hopeful</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Share Anonymously</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="posts-container" id="posts-container">
+                    <!-- Posts will be populated here -->
+                </div>
+            </div>
+
+            <!-- Support Groups -->
+            <div id="support-groups" class="community-tab">
+                <div class="groups-grid" id="groups-grid">
+                    <!-- Support groups will be populated here -->
+                </div>
+            </div>
+
+            <!-- Find Match -->
+            <div id="find-match" class="community-tab">
+                <div class="match-container">
+                    <div class="match-card card">
+                        <div class="card__body">
+                            <h3>Find Your Support Match</h3>
+                            <p>Connect with someone who understands your journey</p>
+                            <div class="match-preferences">
+                                <div class="form-group">
+                                    <label class="form-label">I'm looking for support with:</label>
+                                    <div class="preference-tags">
+                                        <div class="preference-tag" data-preference="anxiety">Anxiety</div>
+                                        <div class="preference-tag" data-preference="depression">Depression</div>
+                                        <div class="preference-tag" data-preference="stress">Stress</div>
+                                        <div class="preference-tag" data-preference="relationships">Relationships</div>
+                                        <div class="preference-tag" data-preference="work">Work Issues</div>
+                                        <div class="preference-tag" data-preference="studies">Academic Pressure</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn--primary" id="find-matches-btn">Find Matches</button>
+                        </div>
+                    </div>
+
+                    <div class="matches-container" id="matches-container" style="display: none;">
+                        <h3>Potential Matches</h3>
+                        <div class="matches-list" id="matches-list">
+                            <!-- Matches will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Page -->
+    <div id="chat-page" class="page">
+        <div class="container">
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <div class="chat-header">
+                        <h3>Messages</h3>
+                        <button class="btn btn--sm btn--primary" id="new-chat-btn">New Chat</button>
+                    </div>
+                    <div class="chat-list" id="chat-list">
+                        <!-- Chat conversations will be listed here -->
+                    </div>
+                </div>
+
+                <div class="chat-main">
+                    <div class="chat-welcome" id="chat-welcome">
+                        <div class="chat-welcome-content">
+                            <i class="fas fa-comments"></i>
+                            <h3>Welcome to SoulSync Chat</h3>
+                            <p>Select a conversation or start a new chat to begin connecting with others.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resources Page -->
+    <div id="resources-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-book-open"></i> Mental Health Resources</h1>
+                <p>Access professional support and resources tailored for India</p>
+            </div>
+
+            <div class="resources-grid">
+                <!-- Emergency Helplines -->
+                <div class="resource-card card">
+                    <div class="card__body">
+                        <h3><i class="fas fa-phone emergency-icon"></i> Emergency Helplines</h3>
+                        <div class="helplines-list">
+                            <div class="helpline-item">
+                                <div class="helpline-name">KIRAN Mental Health Helpline</div>
+                                <div class="helpline-number">1800-599-0019</div>
+                                <div class="helpline-desc">24/7 toll-free helpline by Ministry of Social Justice</div>
+                            </div>
+                            <div class="helpline-item">
+                                <div class="helpline-name">Sneha Suicide Prevention</div>
+                                <div class="helpline-number">044-24640050</div>
+                                <div class="helpline-desc">Crisis intervention and emotional support</div>
+                            </div>
+                            <div class="helpline-item">
+                                <div class="helpline-name">AASRA</div>
+                                <div class="helpline-number">022-27546669</div>
+                                <div class="helpline-desc">24x7 helpline for depression and suicidal prevention</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Organizations -->
+                <div class="resource-card card">
+                    <div class="card__body">
+                        <h3><i class="fas fa-hospital"></i> Professional Organizations</h3>
+                        <div class="organizations-list">
+                            <div class="org-item">
+                                <div class="org-name">Tele MANAS</div>
+                                <div class="org-website">telemanas.mohfw.gov.in</div>
+                                <div class="org-desc">Government initiative for mental health support</div>
+                                <a href="https://telemanas.mohfw.gov.in" target="_blank" class="btn btn--sm btn--outline">Visit Website</a>
+                            </div>
+                            <div class="org-item">
+                                <div class="org-name">Indian Psychiatric Society</div>
+                                <div class="org-website">indianpsychiatricsociety.org</div>
+                                <div class="org-desc">Professional mental health organization</div>
+                                <a href="https://indianpsychiatricsociety.org" target="_blank" class="btn btn--sm btn--outline">Visit Website</a>
+                            </div>
+                            <div class="org-item">
+                                <div class="org-name">NIMHANS</div>
+                                <div class="org-website">nimhans.ac.in</div>
+                                <div class="org-desc">National Institute of Mental Health and Neurosciences</div>
+                                <a href="https://nimhans.ac.in" target="_blank" class="btn btn--sm btn--outline">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wellness Resources -->
+                <div class="resource-card card">
+                    <div class="card__body">
+                        <h3><i class="fas fa-leaf"></i> Wellness Resources</h3>
+                        <div class="wellness-resources">
+                            <div class="wellness-item">
+                                <h4>Breathing Exercises</h4>
+                                <p>Simple breathing techniques to manage anxiety and stress</p>
+                                <button class="btn btn--sm btn--primary breathing-exercise-btn">Start Exercise</button>
+                            </div>
+                            <div class="wellness-item">
+                                <h4>Meditation Guide</h4>
+                                <p>Guided meditation sessions for different emotional states</p>
+                                <button class="btn btn--sm btn--primary meditation-btn">Begin Meditation</button>
+                            </div>
+                            <div class="wellness-item">
+                                <h4>Crisis Support</h4>
+                                <p>Immediate help and coping strategies for crisis situations</p>
+                                <button class="btn btn--sm btn--primary crisis-support-btn">Get Help Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Content -->
+                <div class="resource-card card">
+                    <div class="card__body">
+                        <h3><i class="fas fa-graduation-cap"></i> Educational Content</h3>
+                        <div class="educational-content">
+                            <div class="content-item">
+                                <h4>Understanding Mental Health</h4>
+                                <p>Basic information about common mental health conditions</p>
+                            </div>
+                            <div class="content-item">
+                                <h4>Coping Strategies</h4>
+                                <p>Practical techniques for managing daily stress and emotions</p>
+                            </div>
+                            <div class="content-item">
+                                <h4>Building Resilience</h4>
+                                <p>Develop emotional strength and bounce back from challenges</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-user"></i> Your Profile</h1>
+                <p>Manage your account and preferences</p>
+            </div>
+            <div class="profile-content">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>Profile coming soon...</h3>
+                        <p>This feature will allow you to customize your experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Page -->
+    <div id="leaderboard-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-trophy"></i> Leaderboard</h1>
+                <p>Top contributors in our supportive community</p>
+            </div>
+
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-period="weekly">Weekly</button>
+                <button class="tab-btn" data-period="monthly">Monthly</button>
+                <button class="tab-btn" data-period="all-time">All Time</button>
+            </div>
+
+            <div class="leaderboard-container">
+                <div class="leaderboard-list" id="leaderboard-list">
+                    <!-- Leaderboard entries will be populated here -->
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h3>Your Achievements</h3>
+                <div class="achievements-grid" id="achievements-grid">
+                    <!-- Achievement badges will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="breathing-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Breathing Exercise</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="breathing-exercise">
+                    <div class="breathing-circle" id="breathing-circle"></div>
+                    <div class="breathing-text" id="breathing-text">Click Start to Begin</div>
+                    <button id="breathing-start-btn" class="btn btn--primary">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="meditation-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Guided Meditation</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="meditation-guide">
+                    <div class="meditation-options">
+                        <button class="btn btn--outline meditation-option" data-type="calm">Calming Meditation (5 min)</button>
+                        <button class="btn btn--outline meditation-option" data-type="anxiety">Anxiety Relief (10 min)</button>
+                        <button class="btn btn--outline meditation-option" data-type="sleep">Sleep Meditation (15 min)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="crisis-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Crisis Support</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="crisis-content">
+                    <div class="crisis-urgent">
+                        <h4>🚨 Need Immediate Help?</h4>
+                        <p>If you're having thoughts of self-harm, please reach out immediately:</p>
+                        <div class="crisis-helplines">
+                            <div class="crisis-helpline">
+                                <strong>KIRAN: 1800-599-0019</strong>
+                                <span>24/7 Mental Health Support</span>
+                            </div>
+                            <div class="crisis-helpline">
+                                <strong>AASRA: 022-27546669</strong>
+                                <span>Suicide Prevention Helpline</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="crisis-coping">
+                        <h4>Immediate Coping Strategies:</h4>
+                        <ul>
+                            <li>Take slow, deep breaths</li>
+                            <li>Ground yourself: name 5 things you can see, 4 things you can touch</li>
+                            <li>Reach out to a trusted friend or family member</li>
+                            <li>Remove yourself from stressful situations if possible</li>
+                            <li>Remember: this feeling is temporary and will pass</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
